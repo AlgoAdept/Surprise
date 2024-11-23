@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confession Puzzle</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      color: #85e89d;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 16px;
+      color: #c5c5c5;
+    }
+    .container {
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+    }
+    .editor {
+      background: #252526;
+      border: 1px solid #3c3c3c;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: left;
+      margin: 20px auto;
+      color: #9cdcfe;
+      overflow: auto;
+      max-height: 300px;
+    }
+    .editor pre {
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+    .button {
+      background-color: #007acc;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #005a9e;
+    }
+    .hidden-message {
+      display: none;
+      font-size: 18px;
+      color: #85e89d;
+      margin-top: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .heart-button {
+      display: none;
+      margin-top: 20px;
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #fa0574;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .heart-button:hover {
+      background-color: #c0045e;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .instructions {
+      background: #1e1e1e;
+      border: 1px dashed #3c3c3c;
+      padding: 10px;
+      border-radius: 8px;
+      color: #c586c0;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .hint {
+      color: #dcdcaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Code Puzzle 🧑‍💻</h1>
+    <p>Complete the task below to unlock a special message.</p>
+    <div class="instructions">
+      <p><strong>Instructions:</strong></p>
+      <ul>
+        <li>Step 1: Copy the unlockPuzzle() function given below </li>
+        <li>Step 2: Open your browser's developer console (<span class="hint">F12 or Ctrl+Shift+I</span>).</li>
+        <li>Step 3: Look for the secret key in the console.</li>
+        <li>Step 4: Paste the code in your console that you've copied.</li>
+        <li>Step 5: Replace <code>'****'</code> with the key in the function <code>unlockPuzzle()</code>.</li>
+        <li>Step 6: Run the function in the console and unlock the message!</li>
+      </ul>
+    </div>
+    <div class="editor">
+      <pre>
+// Task: Find the hidden key in the following code!
+// Hint: Open the browser console (F12) to solve it.
+
+function unlockPuzzle() {
+  let key = '****'; // Replace '****' with the secret key you find.
+  if (key === 'unlock_me') {
+    alert("🎉 Congratulations! You've solved it.");
+    document.querySelector('.hidden-message').style.display = 'block';
+    document.querySelector('.heart-button').style.display = 'inline-block';
+  } else {
+    alert("❌ Incorrect key. Try again!");
+  }
+}
+      </pre>
+    </div>
+    <button class="button" onclick="alert('Try running the code in the console!')">Run Code</button>
+    <div class="hidden-message">
+      <p><strong>// Secret Message:</strong></p>
+      <p>I like you, but like debugging, it took me time to figure it out.</p>
+      <p>// Maybe you’ve already noticed… 😊</p>
+    </div>
+    <!-- Hidden heart animation button -->
+    <a href="heart.html" class="heart-button">💖 See the Heart Animation 💖</a>
+  </div>
+  <script>
+    // Log the secret key in the browser console
+    console.log("%cYour secret key is: 'unlock_me'", "color: #85e89d; font-size: 16px; font-weight: bold;");
+  </script>
+</body>
+</html>
